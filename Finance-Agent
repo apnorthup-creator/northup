@@ -1,0 +1,730 @@
+-- Budget seed generated from EveryDollar CSVs (fiscal periods named by end month)
+BEGIN;
+
+INSERT INTO categories (grp, name) VALUES
+('Income', 'SW Debit'),
+('Income', 'EJ Salary'),
+('Income', 'Daycare'),
+('Income', 'Bills Salary'),
+('Income', 'DCA - Request on the 6th'),
+('Disposable', 'Alex + Addison'),
+('Disposable', 'Groceries'),
+('Bills/Subscriptions', 'Mortgage'),
+('Bills/Subscriptions', 'ERAC Daycare'),
+('Bills/Subscriptions', 'Sofi'),
+('Bills/Subscriptions', 'Student Loans'),
+('Bills/Subscriptions', 'AmFam'),
+('Bills/Subscriptions', 'Spire'),
+('Bills/Subscriptions', 'Sewer'),
+('Bills/Subscriptions', 'Holy Redeemer'),
+('Southwest CC', 'Dropbox'),
+('Southwest CC', 'SiriusXM'),
+('Southwest CC', 'Netflix'),
+('Southwest CC', 'SimpliSafe'),
+('Southwest CC', 'Diapers'),
+('Southwest CC', 'Water'),
+('Southwest CC', 'Chewy'),
+('Southwest CC', 'Subs'),
+('Southwest CC', 'Monthly Supplies'),
+('Southwest CC', 'F45'),
+('Southwest CC', 'Ameren'),
+('Southwest CC', 'Haircuts'),
+('Southwest CC', 'AT&T'),
+('Savings', 'Emergency Fund'),
+('SWDeb', 'SBA LOAN'),
+('Marriott CC', 'Foss Swim'),
+('Marriott CC', 'Peloton'),
+('Income', 'Unbridled Salary'),
+('Income', 'Unbridled Commission'),
+('Income', 'Kenna Salary'),
+('Disposable', 'Costco'),
+('Disposable', 'Jacoby'),
+('Bills/Subscriptions', 'Card Payment'),
+('Southwest CC', 'Waste'),
+('Southwest CC', 'Pets & Co'),
+('Southwest CC', 'Cleaning'),
+('Marriott CC', 'Foss'),
+('Marriott CC', 'Spotify'),
+('Disposable', 'Weekend'),
+('Bills/Subscriptions', 'December Carryover'),
+('Income', 'Dec - Carryover'),
+('Bills/Subscriptions', 'Card Pmt')
+ON CONFLICT DO NOTHING;
+
+INSERT INTO category_budgets (budget_period_id, category_id, planned) VALUES
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Income' AND name='SW Debit'), 300.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 3697.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Bills Salary'), 7916.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 750.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 800.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 3979.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 154.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 64.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 25.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Diapers'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 48.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 192.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss Swim'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-08-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Unbridled Salary'), 1500.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Unbridled Commission'), 500.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Kenna Salary'), 10000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 5000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 1800.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 1000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Costco'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Jacoby'), 350.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 5045.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Card Payment'), 3180.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 160.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 25.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Waste'), 84.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Pets & Co'), 120.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 190.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Cleaning'), 310.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-09-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Spotify'), 34.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Kenna Salary'), 10000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 7500.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Bills Salary'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 1860.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 1250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Costco'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Weekend'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 4036.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Card Payment'), 3000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='December Carryover'), 1500.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 160.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 25.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Waste'), 84.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Pets & Co'), 120.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 190.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Cleaning'), 310.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-10-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Spotify'), 34.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Kenna Salary'), 8000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 5000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Dec - Carryover'), 1500.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 3000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 1000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Costco'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Weekend'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 4036.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Card Pmt'), 590.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 160.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 25.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Waste'), 84.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Pets & Co'), 120.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 190.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Cleaning'), 310.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-11-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Spotify'), 34.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Kenna Salary'), 8000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 5000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 1250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 1000.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Costco'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Weekend'), 0.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 5045.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 160.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Waste'), 84.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Pets & Co'), 120.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 190.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Cleaning'), 310.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2026-12-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Spotify'), 34.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Kenna Salary'), 10000.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Income' AND name='EJ Salary'), 5000.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Income' AND name='Daycare'), 1200.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Income' AND name='DCA - Request on the 6th'), 625.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Alex + Addison'), 2800.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Groceries'), 1000.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Costco'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Disposable' AND name='Weekend'), 125.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Mortgage'), 4042.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='ERAC Daycare'), 4036.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Card Payment'), 1165.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sofi'), 380.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Student Loans'), 359.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='AmFam'), 160.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Spire'), 110.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Sewer'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Bills/Subscriptions' AND name='Holy Redeemer'), 25.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Dropbox'), 12.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SiriusXM'), 20.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Netflix'), 27.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='SimpliSafe'), 33.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Water'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Chewy'), 60.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Waste'), 84.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Subs'), 90.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Monthly Supplies'), 100.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Pets & Co'), 120.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='F45'), 150.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Ameren'), 190.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Haircuts'), 260.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='Cleaning'), 310.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Southwest CC' AND name='AT&T'), 283.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Savings' AND name='Emergency Fund'), 250.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='SWDeb' AND name='SBA LOAN'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Peloton'), 50.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Foss'), 130.0),
+((SELECT id FROM budget_periods WHERE start_date='2027-01-15'), (SELECT id FROM categories WHERE grp='Marriott CC' AND name='Spotify'), 35.0);
+
+COMMIT;
+# CLAUDE.md - Household Finance Agent
+
+Personal finance app for Alex and Addison. Replaces EveryDollar with a self-hosted budget tracker plus cash-flow projection and a daily 7am email brief. This file is the build spec; every decision below was made with Alex in September 2026. Do not re-litigate decisions, but ask when something is genuinely ambiguous.
+
+## Style rule
+
+Never use em dashes in any generated writing, emails, or UI copy.
+
+## Stack (decided)
+
+- Node.js + Express on Railway, Postgres (Railway plugin). Same stack as Alex's FreePro app.
+- One deployable service containing: REST API, cron jobs, and a mobile-friendly web UI.
+- Make.com watches the email inbox and POSTs parsed bank-notification transactions to this app. Make owns nothing; this app owns all data.
+- Email out via Resend (or SendGrid). Claude API (model claude-sonnet-4-6) writes the daily narrative and is the auto-coding fallback.
+- Balances are seeded manually and carried forward by the app. Reconciled each budget period. Plaid is a later upgrade, not now.
+
+## Files in this handoff
+
+- `schema.sql`: full Postgres schema plus seed data (accounts, recurring items, budget periods, categories, coding rules table). Run once on a fresh database.
+- `budgets_seed.sql`: 6 fiscal months of category budgets converted from Alex's EveryDollar CSVs. Run after schema.sql.
+- `engine.js`: the projection engine, a pure function, already tested. Feed it rows from Postgres. Supports pay_full_balance, pay_period_charges (with initial_accrual), reserves, and flags.
+- `run-projection.js`: test harness with real seed data and documented assumptions. Keep as a regression test.
+
+## Household model (all decided, do not change without asking Alex)
+
+- Fiscal months run the 15th through the 14th. EveryDollar exports are named by END month: "10-2026" = Sep 15 to Oct 14.
+- Income: Alex ~$2,000 every Friday (Kenna Group, started Sept 2026). Addison $2,500 every other Wednesday anchored 2026-09-16 (Edward Jones; her 9/2 first check was $3,697.88 pre-deductions). Family childcare support $1,200 on the 1st via Venmo (lands in Spending 4815, gets transferred to Bills 5061; the daily email should nudge this transfer around the 1st). DCA reimbursement $625/month, requested on the 6th, continues under Edward Jones benefits.
+- One-offs: final Unbridled check ~$1,500 on 9/15, commission ~$500 end of September.
+- Accounts: Bills 5061 (hub), Spending 4815 (fed $25 each weekday), Groceries 1720 (Addison's envelope: $250/week in, spent down, intentionally hits zero; it is a savings account today and incurs $13-37/month withdrawal fees; a to-do exists to convert it to checking), Southwest debit 1078 (CLOSING: sweep $104.24 to Bills, move SBA EIDL $50 and NYT $6 autopays to Bills), Marriott card 6212 (flow-through), Southwest card 7449 (carries recurring charges plus ~$6.3K bridge debt).
+- THE MEDICAL RESERVE: $8,100 inside Bills is earmarked for incoming medical bills. It is not spendable. The projection must treat reserved_amount as a floor and flag any dip below it. This is why the Southwest bridge debt is NOT being paid off in a lump sum.
+- Card rhythm: both cards settled on the 14th, the last day of the fiscal month. The settle covers that period's charges, not the carried Southwest balance. Southwest recurring runs ~$1,799/month (see category seed); Marriott recurring ~$214 plus as-you-go discretionary payments during the month.
+- Bridge debt paydown is already budgeted as "Card Payment" lines: $3,180 (Oct period), $3,000 (Nov), $590 (Dec), $1,165 (Feb), ~$7,935 total. Interest accrues ~$150/month meanwhile (estimate, ~29% APR).
+- Emergency fund: $250/month line starts in the November period. Separate HYSA at a different institution is planned but not yet opened.
+
+## What to build (in order)
+
+### 1. App scaffold + migrations
+Express app, pg client, migration runner that applies schema.sql then budgets_seed.sql. Environment: DATABASE_URL, ANTHROPIC_API_KEY, RESEND_API_KEY, INGEST_SECRET, TZ=America/Chicago.
+
+### 2. Ingestion endpoint for Make.com
+POST /api/ingest with header X-Ingest-Secret. Body: {account_last4, date, amount, description, external_ref}. Signed amount, negative = money out. Upsert on (account_id, external_ref) so Make retries are safe. On insert, run auto-coding (step 3) and update the running balance. Return 200 with {id, category, balance}.
+
+### 3. Auto-coding
+Layer 1: coding_rules table, case-insensitive substring match on description, lowest priority number wins. Seed obvious rules (ALDI -> Groceries, MSD -> Sewer, AT&T -> AT&T, SOFI -> Sofi, etc.) from the category list. Layer 2: no rule match -> one Claude API call with the description, amount, account, and the category list; response must be JSON {category, confidence}. Store which layer coded it. Layer 3: when Alex re-codes a transaction in the UI, write a new coding_rule (created_from='correction') so the same merchant never needs Claude again.
+
+### 4. Budget UI (EveryDollar replacement)
+Mobile-first single page. Current fiscal period by default with a period switcher. Groups and line items exactly as in categories: planned, spent (sum of coded transactions in period), remaining, with progress bars. Income section shows received vs planned. A transactions list with tap-to-recode. Show Bills balance vs the $8,100 reserve prominently. Keep it fast and plain; no build framework needed, server-rendered plus a little vanilla JS is fine.
+
+### 5. Projection integration
+Nightly (and on demand) run engine.js with live balances and recurring_items. Store the 45-day result. Surface in the UI: low point and date, reserve dips, upcoming 7 days of bills.
+
+### 6. Daily 7am email
+Cron 06:45 America/Chicago. Compose data: current balances, projected low point and date, bills due in next 7 days, budget period status per group (planned vs spent vs remaining), reserve status, any flags (OVERDRAFT, RESERVE_DIP, LOW_BALANCE), and a recommended-transfers section (e.g. move the $1,200 Venmo to Bills near the 1st; suggest extra Southwest card payment when Bills exceeds reserve + buffer + upcoming 7-day outflows). Claude API writes a short plain-language narrative from that data. Send via Resend at 7:00. Subject: "Daily brief: [date]". No em dashes anywhere.
+
+### 7. Notifications (after the above works)
+On ingest of a deposit or any transaction over a threshold (default $200), send an immediate short email. Configurable per rule later; keep simple now.
+
+## Open items to confirm with Alex during build
+
+1. F45 ($150) and Pets & Co (~$120): the budget files put both on the Southwest card, but Alex said F45 moved to the Marriott card. Confirm which card before seeding coding rules.
+2. Southwest debit 1078 shows $300/period income in the Sept budget (the old $150 semi-monthly split). Confirm it stopped after the job change and the account is closed.
+3. Exact mortgage draft day (modeled as the 1st) and daycare weekday (modeled as Monday).
+4. Sofi $380 and Student Loans $359 draft days.
+5. Whether Addison's checks stay $2,500 after deductions begin 9/16 (first check was pre-deduction).
+6. Groceries budget is $800-1,250/month in the files but the transfer rhythm is $250/week. Reconcile which number drives the envelope.
+
+## Definition of done for v1
+
+Make.com can POST a transaction and see it coded and reflected in the budget UI within seconds; the 7am email arrives daily with accurate balances, projection, and budget status; Alex can recode a transaction from his phone and the correction sticks as a rule.
+
+// Finance Agent projection engine
+// Pure logic: takes accounts + recurring items, returns day-by-day balances.
+// No database dependency here; the app layer feeds it rows from Postgres.
+
+// ---- date helpers (all work in UTC date-only space) ----
+function d(iso) { return new Date(iso + 'T00:00:00Z'); }
+function iso(date) { return date.toISOString().slice(0, 10); }
+function addDays(date, n) { const x = new Date(date); x.setUTCDate(x.getUTCDate() + n); return x; }
+function daysBetween(a, b) { return Math.round((b - a) / 86400000); }
+
+// Does a recurring item occur on this date?
+function occursOn(item, date) {
+  const day = date.getUTCDay();          // 0=Sunday
+  const dom = date.getUTCDate();
+  if (item.start_date && date < d(item.start_date)) return false;
+  if (item.end_date && date > d(item.end_date)) return false;
+  if (item.is_active === false) return false;
+
+  switch (item.frequency) {
+    case 'once':
+      return item.anchor_date && iso(date) === item.anchor_date;
+    case 'weekdays':
+      return day >= 1 && day <= 5;
+    case 'weekly': {
+      if (item.anchor_date) {
+        const diff = daysBetween(d(item.anchor_date), date);
+        return diff >= 0 && diff % 7 === 0;
+      }
+      return item.weekday !== null && item.weekday !== undefined && day === item.weekday;
+    }
+    case 'biweekly': {
+      if (!item.anchor_date) return false;
+      const diff = daysBetween(d(item.anchor_date), date);
+      return diff >= 0 && diff % 14 === 0;
+    }
+    case 'semimonthly':
+      return dom === 1 || dom === 15;
+    case 'monthly': {
+      const target = item.day_of_month ??
+        (item.anchor_date ? d(item.anchor_date).getUTCDate() : null);
+      if (target === null) return false;
+      if (item.anchor_date && date < d(item.anchor_date)) return false;
+      // clamp: day 31 fires on last day of shorter months
+      const lastDom = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
+      return dom === Math.min(target, lastDom);
+    }
+    case 'quarterly': {
+      if (!item.anchor_date) return false;
+      const a = d(item.anchor_date);
+      if (date < a) return false;
+      const monthsApart = (date.getUTCFullYear() - a.getUTCFullYear()) * 12 + (date.getUTCMonth() - a.getUTCMonth());
+      return monthsApart % 3 === 0 && dom === a.getUTCDate();
+    }
+    default:
+      return false;
+  }
+}
+
+/**
+ * Project daily balances.
+ * @param accounts   [{id, nickname, account_type, opening_balance, opening_date, is_active}]
+ * @param items      recurring_items rows (see schema)
+ * @param opts       {startDate, horizonDays}
+ * @returns {days, accounts: {nickname: {daily: [{date, balance, events[]}], low, lowDate}}, flags[]}
+ */
+function project(accounts, items, opts = {}) {
+  const horizon = opts.horizonDays ?? 45;
+  const start = d(opts.startDate);
+  const balances = {};
+  const byId = {};
+  const series = {};
+
+  for (const a of accounts) {
+    byId[a.id] = a;
+    balances[a.id] = Number(a.opening_balance);
+    series[a.nickname] = { daily: [], low: Infinity, lowDate: null, lowestBeforeInflow: null };
+  }
+
+  const flags = [];
+
+  for (let i = 0; i < horizon; i++) {
+    const date = addDays(start, i);
+    const todays = {};   // account_id -> events
+
+    for (const item of items) {
+      if (!occursOn(item, date)) continue;
+      let amt = Number(item.amount);
+      // pay_full_balance: transfer whatever clears the target card's debt that day
+      if (item.pay_full_balance && item.transfer_to_id) {
+        amt = Math.max(0, -balances[item.transfer_to_id]);
+        amt = Math.round(amt * 100) / 100;
+      }
+      if (amt === 0) continue;
+      const push = (accId, delta, label) => {
+        balances[accId] += delta;
+        (todays[accId] = todays[accId] || []).push({ label, delta, estimate: !!item.amount_is_estimate });
+      };
+      if (item.direction === 'inflow') push(item.account_id, amt, item.name);
+      else if (item.direction === 'outflow') push(item.account_id, -amt, item.name);
+      else if (item.direction === 'transfer') {
+        push(item.account_id, -amt, item.name + ' (out)');
+        // credit card "transfer_to" reduces debt (balance rises toward 0)
+        if (item.transfer_to_id) push(item.transfer_to_id, amt, item.name + ' (in)');
+      }
+    }
+
+    for (const a of accounts) {
+      const bal = Math.round(balances[a.id] * 100) / 100;
+      const s = series[a.nickname];
+      const events = todays[a.id] || [];
+      s.daily.push({ date: iso(date), balance: bal, events });
+      if (a.account_type !== 'credit') {
+        if (bal < s.low) { s.low = bal; s.lowDate = iso(date); }
+        if (bal < 0) flags.push({ date: iso(date), account: a.nickname, type: 'OVERDRAFT', balance: bal });
+        else if (bal < 500 && a.nickname === 'Bills') flags.push({ date: iso(date), account: a.nickname, type: 'LOW_BALANCE', balance: bal });
+      }
+    }
+  }
+
+  // lowest point before next inflow, per account (from the report's perspective: today)
+  for (const a of accounts) {
+    if (a.account_type === 'credit') continue;
+    const s = series[a.nickname];
+    const firstInflowIdx = s.daily.findIndex(day => day.events.some(e => e.delta > 0));
+    const scope = firstInflowIdx > 0 ? s.daily.slice(0, firstInflowIdx) : s.daily;
+    const low = scope.reduce((m, day) => (day.balance < m.balance ? day : m), scope[0]);
+    if (low) s.lowestBeforeInflow = { date: low.date, balance: low.balance };
+  }
+
+  return { start: iso(start), horizonDays: horizon, accounts: series, flags };
+}
+
+module.exports = { project, occursOn };
+
+// Runs the projection with Alex's actual seed data (mirrors schema.sql).
+// Placeholder assumptions are marked ASSUMED and listed in the output.
+const { project } = require('./engine');
+
+const accounts = [
+  { id: 1, nickname: 'Bills',          account_type: 'checking', opening_balance: 11116.61, is_active: true },
+  { id: 2, nickname: 'Spending',       account_type: 'checking', opening_balance: 76.06,    is_active: true },
+  { id: 3, nickname: 'Groceries',      account_type: 'savings',  opening_balance: 3.25,     is_active: true },
+  { id: 5, nickname: 'Marriott card',  account_type: 'credit',   opening_balance: -2131.97, is_active: true },
+  { id: 6, nickname: 'Southwest card', account_type: 'credit',   opening_balance: -6670.09, is_active: true },
+];
+
+const items = [
+  // ---- income ----
+  { name: 'Alex paycheck', account_id: 1, direction: 'inflow', amount: 2000, frequency: 'weekly', anchor_date: '2026-09-11' },
+  { name: 'Addison paycheck', account_id: 1, direction: 'inflow', amount: 2500, frequency: 'biweekly', anchor_date: '2026-09-16' },
+  { name: 'Family childcare support', account_id: 1, direction: 'inflow', amount: 1200, frequency: 'monthly', day_of_month: 1, anchor_date: '2026-10-01' },
+  { name: 'DCA reimbursement', account_id: 1, direction: 'inflow', amount: 625, frequency: 'monthly', day_of_month: 15, anchor_date: '2026-10-15', amount_is_estimate: true },
+  { name: 'Final Unbridled check', account_id: 1, direction: 'inflow', amount: 1500, frequency: 'once', anchor_date: '2026-09-15', amount_is_estimate: true },
+  { name: 'Commission', account_id: 1, direction: 'inflow', amount: 500, frequency: 'once', anchor_date: '2026-09-30', amount_is_estimate: true },
+
+  // ---- fixed bills (ASSUMED dates flagged) ----
+  { name: 'Mortgage', account_id: 1, direction: 'outflow', amount: 4041, frequency: 'monthly', day_of_month: 1, anchor_date: '2026-10-01' }, // ASSUMED drafts the 1st
+  { name: 'Daycare', account_id: 1, direction: 'outflow', amount: 1009, frequency: 'weekly', weekday: 1 }, // ASSUMED Mondays
+  { name: 'MSD sewer', account_id: 1, direction: 'outflow', amount: 75, frequency: 'monthly', day_of_month: 20, amount_is_estimate: true }, // ASSUMED $75 on 20th
+  { name: 'Holy Redeemer church', account_id: 1, direction: 'outflow', amount: 25, frequency: 'monthly', day_of_month: 3, anchor_date: '2026-09-03' },
+  { name: 'SBA EIDL', account_id: 1, direction: 'outflow', amount: 50, frequency: 'monthly', day_of_month: 20, amount_is_estimate: true }, // ASSUMED 20th
+  { name: 'NYT', account_id: 1, direction: 'outflow', amount: 6, frequency: 'monthly', day_of_month: 20, amount_is_estimate: true },
+  { name: 'Pets & Company', account_id: 1, direction: 'outflow', amount: 100, frequency: 'biweekly', anchor_date: '2026-09-18', amount_is_estimate: true }, // ASSUMED $100 alt Fridays
+
+  // ---- transfers ----
+  { name: 'Grocery envelope', account_id: 1, direction: 'transfer', transfer_to_id: 3, amount: 250, frequency: 'weekly', weekday: 5 }, // ASSUMED Fridays
+  { name: 'Weekday spending', account_id: 1, direction: 'transfer', transfer_to_id: 2, amount: 25, frequency: 'weekdays' },
+  { name: 'Grocery spend-down', account_id: 3, direction: 'outflow', amount: 250, frequency: 'weekly', weekday: 1, amount_is_estimate: true }, // envelope empties Mondays after Friday funding
+
+  // ---- card payments: settle day is the 14th, end of the personal fiscal month ----
+  { name: 'Southwest card settle', account_id: 1, direction: 'transfer', transfer_to_id: 6, amount: 0, pay_full_balance: true, frequency: 'monthly', day_of_month: 14 },
+  { name: 'Marriott card settle', account_id: 1, direction: 'transfer', transfer_to_id: 5, amount: 0, pay_full_balance: true, frequency: 'monthly', day_of_month: 14 },
+  { name: 'Marriott flow payments', account_id: 1, direction: 'transfer', transfer_to_id: 5, amount: 500, frequency: 'weekly', weekday: 3, amount_is_estimate: true }, // as-you-go discretionary payments continue
+
+  // ---- card charges that keep accruing (so card balances stay realistic) ----
+  { name: 'Marriott new charges', account_id: 5, direction: 'outflow', amount: 450, frequency: 'weekly', weekday: 6, amount_is_estimate: true }, // ASSUMED ~$450/wk discretionary
+  { name: 'Southwest new charges (utilities etc)', account_id: 6, direction: 'outflow', amount: 350, frequency: 'weekly', weekday: 4, amount_is_estimate: true }, // ASSUMED ~$1.5K/mo recurring on card
+];
+
+const result = project(accounts, items, { startDate: '2026-09-08', horizonDays: 45 });
+
+// ---- report ----
+const bills = result.accounts['Bills'];
+console.log('=== BILLS 5061: daily projection', result.start, '+' + result.horizonDays, 'days ===');
+for (const day of bills.daily) {
+  if (day.events.length === 0) continue;
+  const ev = day.events.map(e => `${e.label} ${e.delta > 0 ? '+' : ''}${e.delta}${e.estimate ? '~' : ''}`).join(', ');
+  console.log(day.date.padEnd(12), String(day.balance).padStart(10), ' ', ev);
+}
+console.log('\nLowest Bills balance in horizon:', bills.low, 'on', bills.lowDate);
+console.log('\n=== FLAGS ===');
+if (result.flags.length === 0) console.log('None. All accounts stay positive.');
+for (const f of result.flags) console.log(`${f.date} ${f.account} ${f.type} ${f.balance}`);
+
+const sw = result.accounts['Southwest card'];
+console.log('\nSouthwest card balance on 9/26 (after payoff):', sw.daily.find(x => x.date === '2026-09-26').balance);
+console.log('Southwest card at horizon end:', sw.daily[sw.daily.length - 1].balance);
+console.log('Bills at horizon end:', bills.daily[bills.daily.length - 1].balance);
+
+// dump JSON for charting
+require('fs').writeFileSync('/home/claude/finance-agent/projection.json', JSON.stringify(result, null, 2));
+
+-- Finance Agent: Postgres schema + seed data
+-- Generated 2026-09-08. Opening balances as of 2026-09-05.
+-- Run order: this file is idempotent-ish for a fresh database. Do not re-run on a live db.
+
+BEGIN;
+
+-- ============================================================
+-- TABLES
+-- ============================================================
+
+CREATE TABLE accounts (
+    id              SERIAL PRIMARY KEY,
+    nickname        TEXT NOT NULL UNIQUE,
+    institution     TEXT NOT NULL,
+    last4           CHAR(4) NOT NULL,
+    account_type    TEXT NOT NULL CHECK (account_type IN ('checking', 'savings', 'credit')),
+    role            TEXT,                       -- human description of what the account is for
+    is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+    opening_balance NUMERIC(12,2) NOT NULL,     -- negative for credit card balances owed
+    reserved_amount NUMERIC(12,2) NOT NULL DEFAULT 0,  -- earmarked money (e.g. $8,100 medical reserve in Bills); projection flags dips below this
+    opening_date    DATE NOT NULL,
+    notes           TEXT
+);
+
+CREATE TABLE categories (
+    id      SERIAL PRIMARY KEY,
+    grp     TEXT NOT NULL,      -- EveryDollar group: Income, Disposable, Bills/Subscriptions, Southwest CC, Marriott CC, Savings, SWDeb
+    name    TEXT NOT NULL,      -- budget line item: Mortgage, Groceries, AT&T...
+    UNIQUE (grp, name)
+);
+
+CREATE TABLE category_budgets (
+    id                SERIAL PRIMARY KEY,
+    budget_period_id  INT NOT NULL REFERENCES budget_periods(id),
+    category_id       INT NOT NULL REFERENCES categories(id),
+    planned           NUMERIC(12,2) NOT NULL,
+    UNIQUE (budget_period_id, category_id)
+);
+
+CREATE TABLE coding_rules (
+    id          SERIAL PRIMARY KEY,
+    pattern     TEXT NOT NULL,              -- case-insensitive substring matched against transaction description
+    category_id INT NOT NULL REFERENCES categories(id),
+    priority    INT NOT NULL DEFAULT 100,   -- lower wins when multiple patterns match
+    created_from TEXT DEFAULT 'manual'      -- 'manual' | 'claude' | 'correction'
+);
+
+CREATE TABLE budget_periods (
+    id               SERIAL PRIMARY KEY,
+    start_date       DATE NOT NULL UNIQUE,      -- always the 15th
+    end_date         DATE NOT NULL,             -- the following 14th
+    variable_budget  NUMERIC(12,2),             -- Alex sets this; NULL until decided
+    notes            TEXT
+);
+
+CREATE TABLE recurring_items (
+    id              SERIAL PRIMARY KEY,
+    name            TEXT NOT NULL,
+    account_id      INT NOT NULL REFERENCES accounts(id),
+    direction       TEXT NOT NULL CHECK (direction IN ('inflow', 'outflow', 'transfer')),
+    transfer_to_id  INT REFERENCES accounts(id),        -- set only when direction = 'transfer'
+    amount          NUMERIC(12,2) NOT NULL,             -- positive; direction carries the sign
+    pay_full_balance BOOLEAN NOT NULL DEFAULT FALSE,    -- transfer clears target card's balance that day; amount ignored
+    amount_is_estimate BOOLEAN NOT NULL DEFAULT FALSE,  -- true for variable items like dog daycare
+    frequency       TEXT NOT NULL CHECK (frequency IN
+                        ('weekly', 'biweekly', 'semimonthly', 'monthly', 'quarterly', 'weekdays', 'once')),
+    anchor_date     DATE,                       -- first/known occurrence; projection walks forward from here
+    day_of_month    INT CHECK (day_of_month BETWEEN 1 AND 31),  -- for monthly items with a fixed day
+    weekday         INT CHECK (weekday BETWEEN 0 AND 6),        -- 0=Sunday, for weekly items
+    start_date      DATE,                       -- item not projected before this
+    end_date        DATE,                       -- item not projected after this (e.g. final paycheck)
+    category        TEXT NOT NULL,
+    is_active       BOOLEAN NOT NULL DEFAULT TRUE,
+    notes           TEXT
+);
+
+CREATE TABLE transactions (
+    id              SERIAL PRIMARY KEY,
+    account_id      INT NOT NULL REFERENCES accounts(id),
+    txn_date        DATE NOT NULL,
+    amount          NUMERIC(12,2) NOT NULL,     -- signed: negative = money out
+    description     TEXT NOT NULL,
+    category_id     INT REFERENCES categories(id),   -- set by auto-coding (rules first, Claude fallback)
+    source          TEXT NOT NULL DEFAULT 'manual' CHECK (source IN ('manual', 'make', 'seed', 'reconciliation')),
+    recurring_item_id INT REFERENCES recurring_items(id),  -- set when matched to a projected item
+    external_ref    TEXT,                       -- bank reference / Make.com dedupe key
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+    UNIQUE (account_id, external_ref)
+);
+
+CREATE INDEX idx_txn_account_date ON transactions (account_id, txn_date);
+CREATE INDEX idx_recurring_active ON recurring_items (is_active) WHERE is_active;
+
+-- ============================================================
+-- SEED: ACCOUNTS (balances as of 2026-09-05)
+-- ============================================================
+
+INSERT INTO accounts (nickname, institution, last4, account_type, role, is_active, opening_balance, opening_date, notes) VALUES
+('Bills',          'Commerce', '5061', 'checking', 'Direct deposits in, all ACH bills out',            TRUE,  11116.61, '2026-09-05', NULL),
+('Spending',       'Commerce', '4815', 'checking', 'Discretionary debit card',                          TRUE,     76.06, '2026-09-05', 'Fed by $25 weekday transfers plus top-ups'),
+('Groceries',      'Commerce', '1720', 'savings',  'Addison''s grocery envelope, $250/wk pass-through',  TRUE,      3.25, '2026-09-05', 'Intentional pass-through. Fees $13-37/mo until converted to checking. TODO: ask Commerce to convert.'),
+('Alex private',   'Southwest','1078', 'checking', 'Winding down, closing',                             FALSE,   104.24, '2026-09-05', 'Move SBA EIDL + NYT autopays to Bills, sweep $104.24 to Bills, close.'),
+('Marriott card',  'Chase',    '6212', 'credit',   'Flow-through card, paid as you go',                 TRUE,  -2131.97, '2026-09-05', 'No balance carried. $300.12 pending not included. F45 charges here now.'),
+('Southwest card', 'Chase',    '7449', 'credit',   'Utilities, phones, streaming, cleaning, STIL software', TRUE, -6670.09, '2026-09-05', 'Carries ~$6.3K bridge debt from job transition. 14th settle covers period recurring charges (~$1,799/mo); paydown via budgeted Card Payment lines Oct-Feb.');
+
+UPDATE accounts SET reserved_amount = 8100 WHERE nickname = 'Bills';  -- medical reserve, do not spend
+
+-- ============================================================
+-- SEED: BUDGET PERIODS (through February)
+-- ============================================================
+
+INSERT INTO budget_periods (start_date, end_date, variable_budget, notes) VALUES
+('2026-08-15', '2026-09-14', NULL, 'Current period at seed time'),
+('2026-09-15', '2026-10-14', NULL, 'First full period on new jobs. Set variable budget.'),
+('2026-10-15', '2026-11-14', NULL, 'Alex off Addison''s insurance after 10/15'),
+('2026-11-15', '2026-12-14', NULL, NULL),
+('2026-12-15', '2027-01-14', NULL, 'Holidays; expect higher variable'),
+('2027-01-15', '2027-02-14', NULL, NULL);
+
+-- ============================================================
+-- SEED: INCOME
+-- ============================================================
+
+INSERT INTO recurring_items (name, account_id, direction, amount, frequency, anchor_date, weekday, day_of_month, start_date, end_date, category, amount_is_estimate, notes) VALUES
+('Alex paycheck',            (SELECT id FROM accounts WHERE nickname='Bills'), 'inflow', 2000.00, 'weekly',  '2026-09-11', 5, NULL, '2026-09-11', NULL, 'income', FALSE, 'Every Friday, new job. Assumed; verify first deposit.'),
+('Addison paycheck',         (SELECT id FROM accounts WHERE nickname='Bills'), 'inflow', 2500.00, 'biweekly','2026-09-16', 3, NULL, '2026-09-16', NULL, 'income', FALSE, 'Edward Jones, every other Wednesday. First check 9/2 was $3,697.88 pre-deduction; $2,500 assumed from 9/16 once deductions start.'),
+('Family childcare support', (SELECT id FROM accounts WHERE nickname='Bills'), 'inflow', 1200.00, 'monthly', '2026-10-01', NULL, 1, NULL, NULL, 'income', FALSE, 'From Addison''s family via Venmo. Lands in Spending 4815 then transferred to Bills. Morning email should nudge the transfer near the 1st.'),
+('DCA reimbursement',        (SELECT id FROM accounts WHERE nickname='Bills'), 'inflow',  625.00, 'monthly', '2026-10-15', NULL, 15, '2026-10-01', NULL, 'income', TRUE, 'Rocky Mountain Payclaim. Continues under Edward Jones plan. Timing floats with claim submission; conservative mid-month date. Verify no gap while new plan spins up.'),
+('Alex final Unbridled check',(SELECT id FROM accounts WHERE nickname='Bills'),'inflow', 1500.00, 'once',    '2026-09-15', NULL, NULL, NULL, NULL, 'income', TRUE, 'Transition one-off'),
+('Alex commission',          (SELECT id FROM accounts WHERE nickname='Bills'), 'inflow',  500.00, 'once',    '2026-09-30', NULL, NULL, NULL, NULL, 'income', TRUE, 'End of September, amount approximate');
+
+-- ============================================================
+-- SEED: FIXED BILLS AND SUBSCRIPTIONS
+-- Amounts/dates from brief + Sept 2026 conversation. anchor_date NULL = day unknown, fill in as statements confirm.
+-- ============================================================
+
+INSERT INTO recurring_items (name, account_id, direction, amount, frequency, anchor_date, day_of_month, category, amount_is_estimate, notes) VALUES
+('Mortgage',            (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow', 4041.00, 'monthly', NULL, 1,    'housing',      FALSE, 'Confirm exact draft day'),
+('Daycare',             (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow', 1009.00, 'weekly',  NULL, NULL, 'childcare',    FALSE, 'Weekly. Confirm weekday.'),
+('MSD sewer',           (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow',    0.00, 'monthly', NULL, NULL, 'utilities',    TRUE,  'Monthly, confirmed. Fill amount from statement.'),
+('Waste Management',    (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow',   83.91, 'quarterly', NULL, NULL, 'utilities',  FALSE, 'Quarterly, confirmed. Anchor from last charge date.'),
+('Holy Redeemer church',(SELECT id FROM accounts WHERE nickname='Bills'), 'outflow',   25.00, 'monthly', '2026-09-03', 3, 'giving',  FALSE, 'Monthly ACH, confirmed'),
+('SBA EIDL loan',       (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow',   50.00, 'monthly', NULL, NULL, 'debt',        FALSE, 'Moving here from closing account 1078'),
+('NYT subscription',    (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow',    6.00, 'monthly', NULL, NULL, 'subscriptions', FALSE, 'Moving here from closing account 1078'),
+('Hulu',                (SELECT id FROM accounts WHERE nickname='Southwest card'), 'outflow', 20.00, 'monthly', NULL, NULL, 'subscriptions', FALSE, 'Downgraded from $99.99'),
+('F45',                 (SELECT id FROM accounts WHERE nickname='Marriott card'),  'outflow', 149.00, 'monthly', NULL, NULL, 'fitness', FALSE, 'Moved from Southwest debit. Charge day unknown.'),
+('Chewy',               (SELECT id FROM accounts WHERE nickname='Southwest card'), 'outflow',   0.00, 'monthly', NULL, NULL, 'pets',   TRUE,  'Active. Fill amount/cadence from statement.'),
+('Pets & Company dog daycare', (SELECT id FROM accounts WHERE nickname='Bills'), 'outflow', 100.00, 'biweekly', NULL, NULL, 'pets',   TRUE,  'Every other week, variable, tied to house cleaning days. PLACEHOLDER amount, ask Alex typical charge.'),
+('Grocery envelope fees',(SELECT id FROM accounts WHERE nickname='Groceries'), 'outflow',  20.00, 'monthly', NULL, NULL, 'fees',      TRUE,  'Excess withdrawal + statement fees, $13-37/mo. Goes away if account converts to checking.');
+
+-- ============================================================
+-- SEED: INTERNAL TRANSFERS
+-- ============================================================
+
+INSERT INTO recurring_items (name, account_id, direction, transfer_to_id, amount, frequency, weekday, category, notes) VALUES
+('Grocery envelope funding', (SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Groceries'), 250.00, 'weekly', NULL, 'transfer', 'Addison''s grocery budget. Confirm which day it moves.'),
+('Weekday spending transfer',(SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Spending'), 25.00, 'weekdays', NULL, 'transfer', 'Mon-Fri $25 to Spending'),
+('Friday spending top-up',   (SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Spending'), 0.00, 'weekly', 5, 'transfer', 'Variable Friday top-up. Fill typical amount or drop if replaced by budget.');
+
+-- ============================================================
+-- SEED: CARD PAYMENT RHYTHM
+-- Both cards settled in full on the 14th, the last day of each personal fiscal month.
+-- ============================================================
+
+INSERT INTO recurring_items (name, account_id, direction, transfer_to_id, amount, pay_full_balance, frequency, day_of_month, category, notes) VALUES
+('Southwest card settle', (SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Southwest card'), 0, TRUE, 'monthly', 14, 'debt', 'Full balance paid on the 14th, end of fiscal month. First settle 9/14 clears the $6,670 bridge debt and stops interest.'),
+('Marriott card settle',  (SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Marriott card'),  0, TRUE, 'monthly', 14, 'debt', 'Full balance paid on the 14th, on top of as-you-go payments during the month.');
+
+INSERT INTO recurring_items (name, account_id, direction, transfer_to_id, amount, frequency, category, amount_is_estimate, notes) VALUES
+('Marriott flow payments', (SELECT id FROM accounts WHERE nickname='Bills'), 'transfer', (SELECT id FROM accounts WHERE nickname='Marriott card'), 500.00, 'weekly', 'debt', TRUE, 'As-you-go payments during the month. Weekly estimate; actuals come from Make.com.');;
+
+COMMIT;
+
+-- ============================================================
+-- STILL TO FILL (query these gaps: SELECT name, notes FROM recurring_items WHERE anchor_date IS NULL OR amount = 0 OR amount_is_estimate)
+-- 1. Mortgage draft day, daycare weekday, MSD amount, WM anchor, SBA/NYT/F45/Chewy dates
+-- 2. Pets & Company typical amount
+-- 3. Friday top-up amount (or replace with variable budget rule)
+-- 4. Variable budgets per period (budget_periods.variable_budget)
+-- 5. Emergency fund: new HYSA at separate institution, target $10K placeholder
+-- ============================================================
